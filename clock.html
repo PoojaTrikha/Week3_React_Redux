@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+
+<body onload="startTime()">
+
+
+<style>
+body {
+    background:white;
+}
+
+   #clock {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #hours {
+      color: blue;
+    }
+
+    #minutes {
+      color: orange;
+    }
+
+    #seconds {
+      color: red;
+    }
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px; 
+
+
+}
+
+</style>
+
+<script>
+
+        function startTime() {
+            let today = new Date();
+               
+            let h = document.getElementById('hours')
+            console.log(h)
+            h.innerText = today.getHours();
+        
+            let m = document.getElementById('minutes')
+            m.innerText = today.getMinutes();
+        
+            let s = document.getElementById('seconds')
+            s.innerText = today.getSeconds();
+           
+            
+        
+        }
+        
+setInterval(startTime, 1000)
+        
+</script>
+<div id="txt" class="clock">
+
+                <span id='hours'></span>:</h2>
+                <span id='minutes'></span>:</h2>
+                <span id='seconds'></span>
+</div>
+</body>
+</html>
